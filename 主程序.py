@@ -41,7 +41,5 @@ for col in cols:
         generate_pic(lst, a=50, m=6, margin_h=6, margin_in=4, margin_out=16, pic_name=f'{role}{col}')
         print('')
 
-# df.to_excel('梯度排行结果.xls')  # 保存结果
-
 if __name__ == '__main__':
     pass
