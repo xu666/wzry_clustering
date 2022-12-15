@@ -6,8 +6,10 @@ Python3.6或以上
 
 - opencv-python
 - numpy
+- xlrd
 - pandas
 - pypinyin
+- scikit-learn
 - sklearn
 
 ## 使用方法
