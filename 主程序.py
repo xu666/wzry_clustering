@@ -1,3 +1,6 @@
+"""
+最肯忘却古人诗，最不屑一顾是相思
+"""
 import numpy as np
 import pandas as pd
 from sklearn.cluster import KMeans
@@ -5,13 +8,12 @@ from sklearn.cluster import KMeans
 from utils import generate_pic
 
 # 设置一些必要的参数
-sheet = '202212'  # 想要统计的表单
-# cols = ['大国Q', '小国Q']  # 想要统计的列
-cols = ['大国微', '小国微']  # 想要统计的列
+sheet = '202301'  # 想要统计的表单
+cols = ['大国Q', '小国Q']  # 想要统计的列
 
 # 初始化
 df: pd.DataFrame = pd.read_excel('./原始数据.xls', sheet_name=sheet)  # 读取数据
-df = df.sort_values('序号')  # 按序号排序
+df = df.sort_values('英雄')  # 按英雄名称排序
 
 for col in cols:
     x = df[col].values.reshape(-1, 1)  # 读取数据列
@@ -39,6 +41,7 @@ for col in cols:
             print(f'T{i}: {s}')
             lst.append(heroes)
 
+        # 拼接生成该分路的图片（在output文件夹）
         generate_pic(lst, a=50, m=6, margin_h=6, margin_in=4, margin_out=16, pic_name=f'{role}{col}')
         print('')
 

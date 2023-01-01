@@ -1,3 +1,5 @@
+from typing import List
+
 import cv2
 import numpy as np
 import pypinyin
@@ -18,7 +20,13 @@ def show_pic(img_, title=''):
     cv2.waitKey()
 
 
-def generate_pic(data, a=30, m=5, margin_h=5, margin_in=10, margin_out=20, pic_name='temp'):
+def generate_pic(data: List[List[str]],
+                 a: int = 30,
+                 m: int = 5,
+                 margin_h: int = 5,
+                 margin_in: int = 10,
+                 margin_out: int = 20,
+                 pic_name='temp') -> np.ndarray:
     """
     生成梯度图片
 
@@ -29,7 +37,7 @@ def generate_pic(data, a=30, m=5, margin_h=5, margin_in=10, margin_out=20, pic_n
     :param margin_in: 英雄头像垂直间距 - 梯度内
     :param margin_out: 英雄头像垂直间距 - 梯度间
     :param pic_name: 保存的图片名称
-    :return: 图片
+    :return: 拼接后的图片
     """
     canvas_list = []  # 画布列表
     k = max(m, (max([len(heroes) for heroes in data]) + 1) // 2)  # 每行容纳的英雄数目
