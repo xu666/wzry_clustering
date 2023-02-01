@@ -8,7 +8,7 @@ from sklearn.cluster import KMeans
 from utils import generate_pic
 
 # 设置一些必要的参数
-sheet = '202301'  # 想要统计的表单
+sheet = '202302'  # 想要统计的表单
 cols = ['大国Q', '小国Q']  # 想要统计的列
 
 # 初始化
