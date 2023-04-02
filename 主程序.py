@@ -8,8 +8,8 @@ from sklearn.cluster import KMeans
 from utils import generate_pic
 
 # 设置一些必要的参数
-sheet = '202303'  # 想要统计的表单
-cols = ['大国Q', '小国Q']  # 想要统计的列
+sheet = '202304'  # 想要统计的表单
+cols = ['大国Q修正', '小国Q修正']  # 想要统计的列
 
 # 初始化
 df: pd.DataFrame = pd.read_excel('./原始数据.xls', sheet_name=sheet)  # 读取数据
